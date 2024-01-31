@@ -33,12 +33,7 @@ public class HotelManagementController {
         //Incase somebody is trying to add the duplicate hotelName return FAILURE
         //in all other cases return SUCCESS after successfully adding the hotel to the hotelDb.
 
-        String res =  hotelManagementServiceObj.addHotel(hotel);
-        if(res == null)
-        return null;
-        else{
-            return res;
-        }
+        return hotelManagementServiceObj.addHotel(hotel);
     }
 
     @PostMapping("/add-user")

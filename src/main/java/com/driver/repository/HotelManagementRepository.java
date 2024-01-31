@@ -42,4 +42,15 @@ public class HotelManagementRepository {
     public void setUserDb(HashMap<Integer, User> userDb) {
         this.userDb = userDb;
     }
+
+    public String addHotel(Hotel hotel){
+        if(hotel == null || hotel.getHotelName() == null){
+            return "FAILURE";
+        }
+        if(hotelDb.containsKey(hotel.getHotelName())){
+            return "FAILURE";
+        }
+        hotelDb.put(hotel.getHotelName(), hotel);
+        return "SUCCESS";
+    }
 }
