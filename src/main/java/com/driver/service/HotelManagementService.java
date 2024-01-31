@@ -31,13 +31,10 @@ public class HotelManagementService {
     }
 
     public Integer addUser(@RequestBody User user){
-        if(user == null){
+        HashMap<Integer, User> userDb = hotelManagementRepositoryObj.getUserDb();
+        if(user == null || userDb.containsKey(user.getaadharCardNo())){
             return 0;
         }
-        HashMap<Integer, User> userDb = hotelManagementRepositoryObj.getUserDb();
-//        if(userDb.containsKey(user.getaadharCardNo())){
-//            return user.getaadharCardNo();
-//        }
         userDb.put(user.getaadharCardNo(), user);
         hotelManagementRepositoryObj.setUserDb(userDb);
         return  user.getaadharCardNo();

@@ -46,12 +46,7 @@ public class HotelManagementController {
 
         //You need to add a User Object to the database
         //Assume that user will always be a valid user and return the aadharCardNo of the user
-
-        int res = hotelManagementServiceObj.addUser(user);
-        if(res == 0) {
-            return 0;
-        }
-       return res;
+       return hotelManagementServiceObj.addUser(user);
     }
 
     @GetMapping("/get-hotel-with-most-facilities")
