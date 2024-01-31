@@ -35,9 +35,9 @@ public class HotelManagementService {
             return 0;
         }
         HashMap<Integer, User> userDb = hotelManagementRepositoryObj.getUserDb();
-        if(userDb.containsKey(user.getaadharCardNo())){
-            return user.getaadharCardNo();
-        }
+//        if(userDb.containsKey(user.getaadharCardNo())){
+//            return user.getaadharCardNo();
+//        }
         userDb.put(user.getaadharCardNo(), user);
         hotelManagementRepositoryObj.setUserDb(userDb);
         return  user.getaadharCardNo();

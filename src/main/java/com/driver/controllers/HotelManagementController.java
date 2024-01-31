@@ -49,7 +49,7 @@ public class HotelManagementController {
 
         int res = hotelManagementServiceObj.addUser(user);
         if(res == 0) {
-            return null;
+            return 0;
         }
        return res;
     }
