@@ -137,7 +137,16 @@ import java.util.*;
 public class HotelManagementService {
     HotelManagementRepository hotelManagementRepositoryObj = new HotelManagementRepository(); //without using Autowired Annotation
     public String addHotel(Hotel hotel){
-        return hotelManagementRepositoryObj.addHotel(hotel);
+        if(hotel == null || hotel.getHotelName() == null){
+            return "FAILURE";
+        }
+        HashMap<String, Hotel> hotelDb = hotelManagementRepositoryObj.getHotelDb();
+        if(hotelDb.containsKey(hotel.getHotelName())){
+            return "FAILURE";
+        }
+        hotelDb.put(hotel.getHotelName(), hotel);
+        hotelManagementRepositoryObj.setHotelDb(hotelDb);
+        return "SUCCESS";
     }
 
     public Integer addUser(User user){
