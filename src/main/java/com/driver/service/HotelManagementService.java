@@ -135,8 +135,7 @@ import java.util.*;
 
 @Service
 public class HotelManagementService {
-    @Autowired
-    HotelManagementRepository hotelManagementRepositoryObj;
+    HotelManagementRepository hotelManagementRepositoryObj = new HotelManagementRepository(); //without using Autowired Annotation
     public String addHotel(Hotel hotel){
         return hotelManagementRepositoryObj.addHotel(hotel);
     }
