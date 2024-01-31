@@ -141,7 +141,7 @@ public class HotelManagementService {
         return hotelManagementRepositoryObj.addHotel(hotel);
     }
 
-    public Integer addUser(@RequestBody User user){
+    public Integer addUser(User user){
         HashMap<Integer, User> userDb = hotelManagementRepositoryObj.getUserDb();
         if(user == null || userDb.containsKey(user.getaadharCardNo())){
             return 0;
