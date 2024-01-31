@@ -39,7 +39,7 @@ public class HotelManagementService {
             return user.getaadharCardNo();
         }
         userDb.put(user.getaadharCardNo(), user);
-        hotelManagementRepositoryObj.setUserDb(user);
+        hotelManagementRepositoryObj.setUserDb(userDb);
         return  user.getaadharCardNo();
     }
 
